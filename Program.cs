@@ -1,9 +1,29 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Sum();
-Subtraction();
-Division();
-Multiplication();
+Menu();
+
+static void Menu()
+{
+    Console.Clear();
+    Console.WriteLine("O que deseja fazer?");
+    Console.WriteLine("1 - Soma");
+    Console.WriteLine("2 - Subtração");
+    Console.WriteLine("3 - Divisão");
+    Console.WriteLine("4 - Multiplicação");
+    Console.WriteLine("5 - Sair");
+    Console.WriteLine("-------------------");
+    Console.WriteLine("Selecione uma opção:");
+    short res = short.Parse(Console.ReadLine());
+
+    switch(res) {
+        case 1: Sum(); break;
+        case 2: Subtraction(); break;
+        case 3: Division(); break;
+        case 4: Multiplication(); break;
+        case 5: System.Environment.Exit(0); break;
+        default: Menu(); break;
+    }
+}
 
 static void Sum()
 {
@@ -23,6 +43,7 @@ static void Sum()
     // Console.WriteLine("O resultado da soma é " + result);
     Console.WriteLine($"O resultado da soma é {result}");
     Console.ReadKey();
+    Menu();
 }
 
 static void Subtraction()
@@ -43,6 +64,7 @@ static void Subtraction()
     // Console.WriteLine("O resultado da soma é " + result);
     Console.WriteLine($"O resultado da subtração é {result}");
     Console.ReadKey();
+    Menu();
 }
 
 static void Division()
@@ -63,6 +85,7 @@ static void Division()
     // Console.WriteLine("O resultado da soma é " + result);
     Console.WriteLine($"O resultado da divisão é {result}");
     Console.ReadKey();
+    Menu();
 }
 
 static void Multiplication()
@@ -83,4 +106,5 @@ static void Multiplication()
     // Console.WriteLine("O resultado da soma é " + result);
     Console.WriteLine($"O resultado da multiplicação é {result}");
     Console.ReadKey();
+    Menu();
 }
